@@ -63,38 +63,38 @@ class SignUpFormBase extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <input
-          name="username"
-          value={username}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Full Name"
+          name = "username"
+          value = {username}
+          onChange = {this.onChange}
+          type = "text"
+          placeholder = "Full Name"
         />
         <input
-          name="email"
-          value={email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
+          name = "email"
+          value = {email}
+          onChange = {this.onChange}
+          type = "text"
+          placeholder = "Email Address"
         />
         <input
-          name="passwordOne"
-          value={passwordOne}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Password"
+          name = "passwordOne"
+          value = {passwordOne}
+          onChange = {this.onChange}
+          type = "password"
+          placeholder = "Password"
         />
         <input
-          name="passwordTwo"
-          value={passwordTwo}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Confirm Password"
+          name = "passwordTwo"
+          value = {passwordTwo}
+          onChange = {this.onChange}
+          type = "password"
+          placeholder = "Confirm Password"
         />
-        <button type="submit" disabled={isInvalid}>
+        <button type = "submit" disabled = {isInvalid}>
           Sign Up
         </button>
 
-        {error && <p>{error.message}</p>}
+        {error && <p> {error.message} </p>}
       </form>
     );
   }
@@ -102,7 +102,7 @@ class SignUpFormBase extends Component {
 
 const SignUpLink = () => (
   <p>
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+    Don't have an account? <Link to = {ROUTES.SIGN_UP}>Sign Up</Link>
   </p>
 );
 
