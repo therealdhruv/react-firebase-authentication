@@ -1,6 +1,9 @@
+// The authentication interface for our React components that will connect to the Firebase API.
+
+
 // Import the functions you need from the SDKs you need
-import 'firebase/auth';
 import { initializeApp } from "firebase/app";
+import { getAuth } from 'firebase/auth';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,22 +22,13 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-
-// the authentication interface for our React components that will connect to the Firebase API.
-
-
-// Initialize Firebase
-// app.initializeApp(firebaseConfig);
-
-// Initialize Firebase
-initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 
 class Firebase {
 
   constructor() {
-    this.auth = app.auth();
+    this.auth = auth;
   }
 
   // *** Auth API ***
