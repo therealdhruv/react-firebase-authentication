@@ -1,6 +1,5 @@
 // The App component is the perfect place to render the Navigation component because it always renders the Navigation component but replaces other components (pages) based on the routes. Basically, the App component is the container into which all our fixed components (e.g. navigation bar, sidebar, footer), as well as the components that are displayed depending on the route in the URL (e.g. account page, login page, password forget page), will go.
 
-
 import React from 'react';
 import {
   BrowserRouter as Router,
@@ -39,7 +38,3 @@ const App = () => (
 );
 
 export default App;
-
-
-
-
