@@ -22,6 +22,9 @@ const Navigation = () => (
       <li>
         <Link to={ROUTES.ADMIN}>Admin</Link>
       </li>
+      <li>
+        <Link to={ROUTES.SIGN_UP}>SignUp</Link>
+      </li>
     </ul>
   </div>
 );
