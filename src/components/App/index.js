@@ -13,6 +13,8 @@ import {
 } from 'react-router-dom';
 import { withFirebase } from '../Firebase';
 
+import { AuthUserContext } from '../Session';
+
 import Navigation from '../Navigation';
 import LandingPage from '../Landing';
 import SignUpPage from '../SignUp';
@@ -51,23 +53,25 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <div>
+      <AuthUserContext.Provider value = {this.state.authUser}>
+        <Router>
           <div>
-            <Navigation authUser={this.state.authUser} />
-            <hr />
-            <Routes>
-              <Route exact path = {ROUTES.LANDING} component = {LandingPage} />
-              <Route exact path = {ROUTES.SIGN_UP} component = {SignUpPage} />
-              <Route exact path = {ROUTES.SIGN_IN} component = {SignInPage} />
-              <Route exact path = {ROUTES.PASSWORD_FORGET} component = {PasswordForgetPage} />
-              <Route exact path = {ROUTES.HOME} component = {HomePage} />
-              <Route exact path = {ROUTES.ACCOUNT} component = {AccountPage} />
-              <Route exact path = {ROUTES.ADMIN} component = {AdminPage} />
-            </Routes>
+            <div>
+              <Navigation authUser={this.state.authUser} />
+              <hr />
+              <Routes>
+                <Route exact path = {ROUTES.LANDING} component = {LandingPage} />
+                <Route exact path = {ROUTES.SIGN_UP} component = {SignUpPage} />
+                <Route exact path = {ROUTES.SIGN_IN} component = {SignInPage} />
+                <Route exact path = {ROUTES.PASSWORD_FORGET} component = {PasswordForgetPage} />
+                <Route exact path = {ROUTES.HOME} component = {HomePage} />
+                <Route exact path = {ROUTES.ACCOUNT} component = {AccountPage} />
+                <Route exact path = {ROUTES.ADMIN} component = {AdminPage} />
+              </Routes>
+            </div>
           </div>
-        </div>
-      </Router>
+        </Router>
+      </AuthUserContext.Provider>
     );
   }
 
