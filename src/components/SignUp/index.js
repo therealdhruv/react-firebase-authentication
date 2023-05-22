@@ -8,9 +8,9 @@ import * as ROUTES from '../../constants/routes';
 
 const SignUpPage = () => (
   <div>
-    <h1>SignUp</h1>
+    <h1> SignUp </h1>
     <FirebaseContext.Consumer>
-      {(firebase) => <SignUpForm firebase={firebase} />}
+      {(firebase) => <SignUpForm firebase = {firebase} />}
     </FirebaseContext.Consumer>
   </div>
 );
